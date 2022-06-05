@@ -1,0 +1,63 @@
+.App {
+  margin: 30px auto;
+}
+
+body {
+  font-family: "Akaya Telivigala", cursive;
+  background-color: rgb(250, 246, 246);
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: green;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+small {
+  font-size: 17px;
+}
+
+.border {
+  border: 1px solid #3193de !important;
+}
+
+.card {
+  box-shadow: 5px 5px 5px lightblue;
+}
+
+#icon {
+  width: 150px;
+  height: 150px;
+}
+
+img {
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 0;
+}
+
+#tempImg {
+  box-shadow: 5px 5px 5px lightblue;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  color: rgb(135, 135, 135);
+  font-size: 22px;
+  font-weight: 150;
+  line-height: 25px;
+}
+
+li::first-letter {
+  text-transform: capitalize;
+}
