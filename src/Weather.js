@@ -1,11 +1,13 @@
 import React,{useState} from "react";
 import FormattedDate from "./FormattedDate";
-//import WeatherInfo from "./WeatherInfo";
+import WeatherIcon from "./WeatherIcon";
 import axios  from "axios";
 import "./Weather.css";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function Weather(props) {
     const[weatherData,setWeatherData]=useState({ready:false});
+   
     const[city,setCity]=useState(props.defaultCity);
     function handleResponse(response){
         
@@ -14,7 +16,7 @@ export default function Weather(props) {
            city: response.data.name,
            date: new Date(response.data.dt*1000),
            description: response.data.weather[0].description,
-           iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+           icon:response.data.weather[0].icon,
            temprature: response.data.main.temp,
            humidity: response.data.main.humidity,
            wind: response.data.wind.speed
@@ -82,16 +84,12 @@ export default function Weather(props) {
             <div className="row ">
               <div className="col-6 ">
                 <div className="clearfix weather-temprature">
-                  <img
-                    src={weatherData.iconUrl}
-                    alt={weatherData.description}
-                    className="float-left "
-                    width="100"
-                  />
-                  <strong>{Math.round(weatherData.temprature) }</strong>
-                  <span className="units">
-                    <a href="/">°C</a>|<a href="/">°F</a>
-                  </span>
+                  <div className="float-left icon">
+                      <WeatherIcon code={weatherData.icon} />
+                  </div>
+                  <WeatherTemperature celsius={weatherData.temprature}/>
+                      
+                  
                 </div>
               </div>
               <div className="col-6 p-4">

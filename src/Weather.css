@@ -6,10 +6,10 @@
     border-radius: 5px;
 }
 
-.weather .weather-temprature img {
+.weather .icon {
     margin-right: 10px;
-    height: 64px;
-    width: 64px;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 .weather .overview {
@@ -21,16 +21,17 @@
 
 .weather .weather-temprature strong {
     color: rgb(32, 33, 36);
-    font-size: 50px;
+    font-size: 70px;
     font-weight: 400;
     line-height: 1;
     margin-left: 0px;
+    margin-top: 0;
 }
 
 .weather .weather-temprature .units {
     position: relative;
     font-size: 20px;
-    top: -17px;
+    top: -32px;
 }
 
 .weather .weather-temprature .active {
