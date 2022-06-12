@@ -1,0 +1,24 @@
+ .weather-forcast {
+    margin-top: 20px;
+    text-align: center;
+    color: #000;
+}
+
+ .weather-forcast-date {
+    text-align: center;
+    background-color: lightblue;
+    border-radius: 45%;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+ .weather-forcast-temperatures {
+    font-size: 17px;
+    background-color:lightblue;
+    border-radius: 45%;
+}
+
+.icon-Forcast{
+    text-align: center;
+}
+

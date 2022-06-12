@@ -4,15 +4,17 @@ import WeatherIcon from "./WeatherIcon";
 import axios  from "axios";
 import "./Weather.css";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForcast from "./WeatherForcast";
+import myImg from './img/allWeather.jpg';
 
 export default function Weather(props) {
     const[weatherData,setWeatherData]=useState({ready:false});
    
     const[city,setCity]=useState(props.defaultCity);
     function handleResponse(response){
-        
         setWeatherData({
            ready:true,
+           coordinates:response.data.coord,
            city: response.data.name,
            date: new Date(response.data.dt*1000),
            description: response.data.weather[0].description,
@@ -84,12 +86,13 @@ export default function Weather(props) {
             <div className="row ">
               <div className="col-6 ">
                 <div className="clearfix weather-temprature">
-                  <div className="float-left icon">
-                      <WeatherIcon code={weatherData.icon} />
+                  <div >
+                    <span >
+                      <WeatherIcon code={weatherData.icon} size={100}/>
+                    </span>
+                    <span className="mb-5"><WeatherTemperature celsius={weatherData.temprature}/></span>  
                   </div>
-                  <WeatherTemperature celsius={weatherData.temprature}/>
-                      
-                  
+                   
                 </div>
               </div>
               <div className="col-6 p-4">
@@ -99,12 +102,15 @@ export default function Weather(props) {
                 </ul>
               </div>
             </div>
+
           </div>
           <div className="col-4">
-            <img src="./img/allWeather.jpg" alt="" className="mt-1" />
+            <img src={myImg} alt="" className="mt-1" />
           </div>
         </div>
+        
       </div>
+     <WeatherForcast coordinates={weatherData.coordinates}/> 
     </div>
   );
   }else{

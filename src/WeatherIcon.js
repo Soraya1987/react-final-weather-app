@@ -26,17 +26,9 @@ export default function WeatherIcon(props){
       <ReactAnimatedWeather
     icon={codeMapimg[props.code]}
     color="green"
-    size={64}
+    size={props.size}
     animate={true}
   />
   )
-}/*
+}
 
-PARTLY_CLOUDY_DAY
-PARTLY_CLOUDY_NIGHT
-CLOUDY
-RAIN
-SLEET
-SNOW
-WIND
-FOG*/
